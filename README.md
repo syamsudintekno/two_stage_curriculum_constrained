@@ -73,3 +73,24 @@ The experiment supports claims about prerequisite enforcement, difficulty
 alignment, ranking trade-offs, and list coverage in a controlled simulation. It
 does not establish improved learning outcomes, classroom effectiveness, or
 performance on a real educational interaction dataset.
+
+## Extended conference experiments
+
+Run the revised simulation and difficulty sensitivity from the repository root:
+
+```bash
+python -m pip install -r requirements.txt
+python extended_experiments.py --output-dir extended_results
+python alignment_experiment.py
+```
+
+The versioned CSV summaries in `extended_results/` cover the hard C1-only
+ablation, soft comparators, feasibility-aware NDCG, learner stages, graph
+variation, and sensitivity to the difficulty margin and ability quantile.
+The extended script also writes intermediate pickle files. Use `--quick` with
+a separate output directory for a reduced smoke run.
+
+The alignment script reports Spearman correlation with concept index. Its
+noise sweep also changes the difficulty distribution. The shuffle is one
+realization, and the reported C1 share has no reduction-share interpretation
+when total overchallenge increases.
