@@ -82,6 +82,8 @@ Run the revised simulation and difficulty sensitivity from the repository root:
 python -m pip install -r requirements.txt
 python extended_experiments.py --output-dir extended_results
 python alignment_experiment.py
+python feasible_set_analysis.py
+python plot_pvr_sensitivity.py
 ```
 
 The versioned CSV summaries in `extended_results/` cover the hard C1-only
@@ -94,3 +96,9 @@ The alignment script reports Spearman correlation with concept index. Its
 noise sweep also changes the difficulty distribution. The shuffle is one
 realization, and the reported C1 share has no reduction-share interpretation
 when total overchallenge increases.
+
+The E8 summary stratifies the original profiles by whether at least K eligible
+candidates exist. It reports per-seed means and sample SDs for PVR, its
+fixed-length bound, excess PVR, relevance, and coverage. Excess PVR is
+undefined for the variable-length hard policy. The plotting script writes
+Fig. 1 as PNG and PDF in extended_results.

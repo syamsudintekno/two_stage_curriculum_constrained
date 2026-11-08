@@ -4,3 +4,4 @@ __pycache__/
 venv/
 .ipynb_checkpoints/
 simulation_results/learner_level_results.csv
+/doc/
